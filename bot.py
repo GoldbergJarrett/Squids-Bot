@@ -27,7 +27,7 @@ async def plex(ctx, *, movie: str):
                 await ctx.send("Movie is already on the Plex!")
 
     if exists is False:
-        with open('C:/Users/goldb/Desktop/new.txt', 'a') as newF:
+        with open('new.txt', 'a') as newF:
             newF.write(movie + '\n')
             await ctx.send("Movie added to list! :ura:")
 
