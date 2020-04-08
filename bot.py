@@ -34,3 +34,5 @@ async def plex(ctx, *, movie: str):
 @bot.command()
 async def test(ctx, *, movie: str):
     await ctx.send(movie)
+    
+clinet.run('')
