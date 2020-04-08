@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 
-#token NTE0Njk1MjI1MDgwNTQ1Mjgw.Xo0ccQ.gMn2N3Oi1KlHScvahbZ9mphxruw
 bot = commands.Bot(command_prefix='!')
 
 #Oauth
