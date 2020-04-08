@@ -14,13 +14,13 @@ async def plex(ctx, *, movie: str):
 
     exists = False
 
-    with open('C:/Users/goldb/Desktop/new.txt', 'r') as newFile:
+    with open('new.txt', 'r') as newFile:
         for line in newFile:
             if movie in line:
                 exists = True
                 await ctx.send("Movie is already on the list to be added to the Plex!")
 
-    with open('C:/Users/goldb/Desktop/plex.txt', 'r') as plexFile:
+    with open('plex.txt', 'r') as plexFile:
         for line in plexFile:
             if movie in line:
                 exists = True
