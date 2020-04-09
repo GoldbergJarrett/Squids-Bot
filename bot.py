@@ -31,6 +31,6 @@ async def plex(ctx, *, movie: str):
     if exists is False:
         with open('new.txt', 'a') as newF:
             newF.write(movie + '\n')
-            await ctx.send("Movie added to list! \:ura:")
+            await ctx.send("Movie added to list! <:ura:390954421942484992>")
     
 bot.run('')
