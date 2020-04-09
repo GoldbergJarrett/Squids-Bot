@@ -6,7 +6,7 @@ bot = commands.Bot(command_prefix='!')
 #test command
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
+    await ctx.send(f'Pong! {round(bot.latency * 1000)}ms')
 
 
 @bot.command()
@@ -32,10 +32,6 @@ command to add movies to a plex movie server list. Use it by doing "!plex 'movie
     if exists is False:
         with open('new.txt', 'a') as newF:
             newF.write(movie + '\n')
-            await ctx.send("Movie added to list! :ura:")
-
-@bot.command()
-async def test(ctx, *, movie: str):
-    await ctx.send(movie)
+            await ctx.send("Movie added to list! \:ura:")
     
-client.run('')
+bot.run('')
