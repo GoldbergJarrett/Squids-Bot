@@ -11,9 +11,9 @@ async def ping(ctx):
 
 @bot.command()
 async def plex(ctx, *, movie: str):
-'''
-command to add movies to a plex movie server list. Use it by doing "!plex 'movie name'". It will add 'movie name' to the list of movies.
-'''
+
+#command to add movies to a plex movie server list. Use it by doing "!plex 'movie name'". It will add 'movie name' to the list of movies.
+
     exists = False
     #check to see if the file is already on the list of movies to be added to the plex.
     with open('new.txt', 'r') as newFile:
