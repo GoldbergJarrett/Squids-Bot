@@ -11,7 +11,6 @@ async def ping(ctx):
 
 @bot.command()
 async def plex(ctx, *, movie: str):
-
 #command to add movies to a plex movie server list. Use it by doing "!plex 'movie name'". It will add 'movie name' to the list of movies.
 
     exists = False
