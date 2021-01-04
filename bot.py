@@ -14,12 +14,14 @@ async def plex(ctx, *, movie: str):
 #command to add movies to a plex movie server list. Use it by doing "!plex 'movie name'". It will add 'movie name' to the list of movies.
 
     exists = False
+    
     #check to see if the file is already on the list of movies to be added to the plex.
     with open('new.txt', 'r') as newFile:
         for line in newFile:
             if movie in line:
                 exists = True
                 await ctx.send("Movie is already on the list to be added to the Plex!")
+                
     #check to see if the movie is already on the plex
     with open('plex.txt', 'r') as plexFile:
         for line in plexFile:
