@@ -3,6 +3,7 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix='!')
 
+uraEmote = "<:ura:390954421942484992>"
 #test command
 @bot.command()
 async def ping(ctx):
@@ -33,6 +34,9 @@ async def plex(ctx, *, movie: str):
     if exists is False:
         with open('new.txt', 'a') as newF:
             newF.write(movie + '\n')
-            await ctx.send("Movie added to list! <:ura:390954421942484992>")
-    
+            await ctx.send("Movie added to list! " + uraEmote)
+#token here. 
 bot.run('')
+
+def weighted_average(star5, star4, star3, star2, star1):
+    return (5 * star5 + 4 * star4 + 3 * star3 + 2 * star2 + 1 * star1) / (star5 + star4 + star3 + star2 + star1)
