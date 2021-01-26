@@ -1,18 +1,42 @@
 import sqlite3
+import bot
 
 connection = sqlite3.connect('Squids.db')
 cursor = connection.cursor()
 
-cursor.execute('''CREATE TABLE members
-                (userID, username)''')
 
-cursor.execute('''CREATE TABLE movies
-                (title, rating, onPlex)''')
+def create_members_table():
+    cursor.execute('''CREATE TABLE IF NOT EXISTS members
+                    (id int, username TEXT, nickName TEXT)''')
+    connection.commit()
+    cursor.close()
+    connection.close()
 
-cursor.execute("INSERT INTO members VALUE ('2006-01-05','BUY','RHAT',100,35.14)")
+def create_movies_on_plex_table():
+    cursor.execute('''CREATE TABLE IF NOT EXISTS moviesOnPlex
+                    (title, rating, onPlex)''')
 
-members = [()]
+    connection.commit()
+    cursor.close()
+    connection.close()
 
-connection.commit()
+def create_movies_in_queue_table():
+    cursor.execute('''CREATE TABLE IF NOT EXISTS moviesInQueue
+                    (title)''')
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+def load_all_members_in_table():
+    
+
+    for guild in bot.bot.guilds:
+        for member in guild.members:
+            cursor.execute("INSERT INTO members (id, username, nickName) VALUES (?, ?, ?)"),
+            (member.id, member.name, member.nick)
+    connection.commit()
+    cursor.close()
+    connection.close()
 
 connection.close()
