@@ -11,6 +11,12 @@ uraEmote = "<:ura:390954421942484992>"
 async def ping(ctx):
     await ctx.send(f'Pong! {round(bot.latency * 1000)}ms')
 
+@bot.command()
+async def getMembers(ctx):
+    for guild in bot.guilds:
+        for member in guild.members:
+            with open('memebers.txt', 'a') as newF:
+                newF.write(member + ', ') 
 
 @bot.command()
 async def plex(ctx, *, movie: str):
@@ -18,7 +24,7 @@ async def plex(ctx, *, movie: str):
 
     exists = False
     
-    #check to see if the file is already on the list of movies to be added to the plex.
+    #check to see if the movie is already on the list of movies to be added to the plex.
     with open('new.txt', 'r') as newFile:
         for line in newFile:
             if movie in line:
