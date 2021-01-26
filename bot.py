@@ -2,8 +2,9 @@ import discord
 from discord.ext import commands
 import oil
 
+intents = discord.Intents().all()
+bot = commands.Bot(command_prefix='!', intents=intents)
 
-bot = commands.Bot(command_prefix='!')
 
 uraEmote = "<:ura:390954421942484992>"
 #test command
@@ -15,8 +16,9 @@ async def ping(ctx):
 async def getMembers(ctx):
     for guild in bot.guilds:
         for member in guild.members:
-            with open('memebers.txt', 'a') as newF:
-                newF.write(member + ', ') 
+            print(member.id)
+            #with open('memebers.txt', 'a') as newF:
+             #   newF.write(str(member))
 
 @bot.command()
 async def plex(ctx, *, movie: str):
@@ -44,4 +46,4 @@ async def plex(ctx, *, movie: str):
             newF.write(movie + '\n')
             await ctx.send("Movie added to list! " + uraEmote)
 #token here. 
-bot.run('NTE0Njk1MjI1MDgwNTQ1Mjgw.W_UBSA.X_NztBqlUhVN6E3n5fFvohRhE-A')
+bot.run('')
