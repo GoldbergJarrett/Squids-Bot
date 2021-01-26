@@ -38,4 +38,4 @@ async def plex(ctx, *, movie: str):
             newF.write(movie + '\n')
             await ctx.send("Movie added to list! " + uraEmote)
 #token here. 
-bot.run('')
+bot.run('NTE0Njk1MjI1MDgwNTQ1Mjgw.W_UBSA.X_NztBqlUhVN6E3n5fFvohRhE-A')
